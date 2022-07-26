@@ -39,17 +39,19 @@ void quickSort(int arr[], int low, int high)
     } 
 } 
    
-void printResult(int arr[], int size) 
-{ 
-    int i; 
-    for (i=0; i < size; i++) 
-        cout<<arr[i]<<"\t"; 
-      
-} 
+void printResult(int *array, int n)
+{
+    for (int i = 0; i < n; ++i)
+    {
+        cout << array[i] << " ";
+    }
+    cout<<endl;
+
+}
    
 int main() 
 { 
-    int arr[] = {12,23,3,43,51,35,19,45}; 
+    int arr[] = {95, 56, 48, 92, 13, 484, 623, 448, 1, 256};
     int n = sizeof(arr)/sizeof(arr[0]); 
     cout<<"Before Sorting :"<<endl;
     printResult(arr,n);
