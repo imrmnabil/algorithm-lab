@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void printArray(int *array, int n)
+void printResult(int *array, int n)
 {
     for (int i = 0; i < n; ++i)
     {
@@ -37,30 +37,30 @@ void merge(int *array, int low, int mid, int high)
     }
 }
 
-void mergeSort(int *array, int low, int high)
+void mSort(int *array, int low, int high)
 {
     int mid;
 
     if (low < high)
     {
         mid = (low + high) / 2;
-        mergeSort(array, low, mid);
-        mergeSort(array, mid + 1, high);
+        mSort(array, low, mid);
+        mSort(array, mid + 1, high);
         merge(array, low, mid, high);
     }
 }
 
 int main()
 {
-    int array[] = {95, 56, 48, 92, 13, 484, 623, 448, 1, 256};
-    int n = sizeof(array) / sizeof(array[0]);
+    int arr[] = {95, 56, 48, 92, 13, 484, 623, 448, 1, 256};
+    int n = sizeof(arr) / sizeof(arr[0]);
 
     std::cout << "Before Sorting :" << std::endl;
-    printArray(array, n);
+    printResult(arr, n);
 
-    mergeSort(array, 0, n - 1);
+    mSort(arr, 0, n - 1);
 
     std::cout << "After Merge Sort :" << std::endl;
-    printArray(array, n);
+    printResult(arr, n);
     return (0);
 }
